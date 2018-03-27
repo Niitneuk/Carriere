@@ -34,7 +34,7 @@ public class research extends HttpServlet {
 		request.setAttribute("num", recupnum);
 		request.setAttribute("nir", recupnir);
 		request.setAttribute("site", recupsite);
-		
+		/*test
 		
 		/* Transmission de la paire d'objets request/response à notre JSP */
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/test.jsp" ).forward( request, response );
