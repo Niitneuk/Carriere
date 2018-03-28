@@ -17,39 +17,67 @@
 			String num = (String) request.getAttribute("num");
 			String nir = (String) request.getAttribute("nir");
 			String site = (String) request.getAttribute("site");
+			
 			out.println("<header>");
-			out.println("Nom : " + nom + " Prénom : " + prenom + "<br>Numéro de tiers : " + num + "<br>N.I.R. : " + nir);
-		
+				out.println("Nom : " + nom + " Prénom : " + prenom + "<br>Numéro de tiers : " + num + "<br>N.I.R. : " + nir);
 			out.println("</header>");
-			ArrayList al = new ArrayList();
+			
+			ArrayList<Object> al = new ArrayList<Object>();
 			al = web.resultat.yearsum(num, site);
 			int compteur = 0;
+			
 			
 			for(int i = 0; i< al.size() / 9; i++){
 				out.println("<nav>");
 					out.println("<span> Année : "+ al.get(compteur));
+					Object annee = al.get(compteur);
 					compteur++;
-					out.println("<br> Nombre de jours payés : " + al.get(compteur));
+					out.println("<br><span> Nombre de jours payés : " + al.get(compteur));
 					compteur++;
-					out.println("<br> Indemnités bruts : "	+ al.get(compteur));
+					out.println("<br><span> Indemnités bruts : "	+ al.get(compteur));
 					compteur++;
 					out.println(" € Brut Abattu : "+ al.get(compteur) + " €");
 					compteur++;
-					out.println("<br> Brut SS Total : " + al.get(compteur));
+					out.println("<br><span> Brut SS Total : " + al.get(compteur));
 					compteur++;
 					out.println(" € Brut SS Plafonné : " + al.get(compteur) + " €");
 					compteur++;
 					out.println("Base vieillesse : " + al.get(compteur) + " €");
 					compteur++;
-					out.println("<br> Cotisation vieillesse : " + al.get(compteur) + " €");
+					out.println("<br><span> Cotisation vieillesse : " + al.get(compteur) + " €");
 					compteur++;
-					out.println("Net Payé : " + al.get(compteur) + " € </span>");
+					out.println("Net Payé : " + al.get(compteur) + " €");
 					compteur++;
 					out.println("<button class='hamburger'>&#9776;</button>");
 					out.println("<button class='cross'>&#735;</button>");
 					out.println("<div class='menu'>");
 						out.println("<ul>");
-							out.println("<li>Link One</li>");
+							out.println("<li>");	
+								ArrayList<Object> al2 = new ArrayList<Object>();
+								al2 = web.resultat.yeardetails(num, site, annee);
+								int compteur1 = 0;
+								while(compteur1 < al2.size()){
+																
+										out.println("<span>" + al2.get(compteur1));
+										compteur1++;
+										out.println("<br><span> Nombre de jours payés : " + al2.get(compteur1));
+										compteur1++;
+										out.println("<br><span> Indemnités bruts : "	+ al2.get(compteur1));
+										compteur1++;
+										out.println(" € Brut Abattu : "+ al2.get(compteur1) + " €");
+										compteur1++;
+										out.println(" Brut SS Total : " + al2.get(compteur1));
+										compteur1++;
+										out.println(" € Brut SS Plafonné : " + al2.get(compteur1) + " €");
+										compteur1++;
+										out.println("<br><span> Base vieillesse : " + al2.get(compteur1) + " €");
+										compteur1++;
+										out.println("Cotisation vieillesse : " + al2.get(compteur1) + " €");
+										compteur1++;
+										out.println("<br><span> Net Payé : " + al2.get(compteur1) + " € <br>");
+										compteur1++;
+								}	
+							out.println("</li>");	
 						out.println("</ul>");
 					out.println("</div>");
 				out.println("</nav><br><br><br>");

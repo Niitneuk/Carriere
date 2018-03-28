@@ -15,7 +15,7 @@
 		String nir = (String) request.getAttribute("nir");
 		String num = (String) request.getAttribute("num");
 		String typereq = (String) request.getAttribute("typereq");
-		ArrayList al = new ArrayList();
+		ArrayList<Object> al = new ArrayList<Object>();
 		int compteur = 0;
 		
 		al = web.resultat.find(nom, prenom, nir, num, typereq);

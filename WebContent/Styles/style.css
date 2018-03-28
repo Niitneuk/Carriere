@@ -19,7 +19,7 @@ nav{
 	background:#ffffff; 
 	height:60px; 
 	line-height:60px;
-	border:1px solid black;
+	border:1px solid blue;
 	border-radius: 10px;
 	marging-right: 5em;
 	padding-bottom:13em;
@@ -54,10 +54,10 @@ nav{
   outline:none;
   z-index:10000000000000;
 }
-.menu{z-index:1000000; font-weight:bold;  width:100%; background:#f1f1f1;  position:absolute; font-size:12px;  }
+.menu{z-index:1000000; font-weight:bold;  width:100%; background:#f1f1f1;  position: relative; font-size:12px;}
 .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
-.menu li {display: block;   padding:15px 0 15px 0; border:#005eb8 1px solid;}
-.menu ul li  { text-decoration:none;  margin: 0px; color:#666;}
+.menu li {display: block;   padding:15px 0 15px 0; border:blue 1px solid; border-radius: 10px;}
+.menu ul li  { text-decoration:none;  margin: 0px; color:#666; background-color: none;}
 .menu {text-decoration:none; color:#666;}
 
 
@@ -74,6 +74,6 @@ nav{
 	}
 
 span{
-	padding-left:20px;
+	padding:20px;
 	}
 	

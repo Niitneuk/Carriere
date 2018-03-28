@@ -28,6 +28,11 @@ input.submit{
 	float: right;
 }
 
+fieldset{
+	border-radius: 10px;
+	border-color: blue;
+}
+
 p{
 	color:red;
 }
