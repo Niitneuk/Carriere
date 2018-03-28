@@ -36,17 +36,17 @@
 					compteur++;
 					out.println("<br><span> Indemnités bruts : "	+ al.get(compteur));
 					compteur++;
-					out.println(" € Brut Abattu : "+ al.get(compteur) + " €");
+					out.println(" € <span>Brut Abattu : "+ al.get(compteur) + " €");
 					compteur++;
-					out.println("<br><span> Brut SS Total : " + al.get(compteur));
+					out.println(" <span>Brut SS Total : " + al.get(compteur));
 					compteur++;
-					out.println(" € Brut SS Plafonné : " + al.get(compteur) + " €");
+					out.println(" € <span>Brut SS Plafonné : " + al.get(compteur) + " €");
 					compteur++;
-					out.println("Base vieillesse : " + al.get(compteur) + " €");
+					out.println("<br><span>Base vieillesse : " + al.get(compteur) + " €");
 					compteur++;
-					out.println("<br><span> Cotisation vieillesse : " + al.get(compteur) + " €");
+					out.println(" <span>Cotisation vieillesse : " + al.get(compteur) + " €");
 					compteur++;
-					out.println("Net Payé : " + al.get(compteur) + " €");
+					out.println("<br><span>Net Payé : " + al.get(compteur) + " €");
 					compteur++;
 					out.println("<button class='hamburger'>&#9776;</button>");
 					out.println("<button class='cross'>&#735;</button>");
@@ -64,15 +64,15 @@
 										compteur1++;
 										out.println("<br><span> Indemnités bruts : "	+ al2.get(compteur1));
 										compteur1++;
-										out.println(" € Brut Abattu : "+ al2.get(compteur1) + " €");
+										out.println(" € <span>Brut Abattu : "+ al2.get(compteur1) + " €");
 										compteur1++;
-										out.println(" Brut SS Total : " + al2.get(compteur1));
+										out.println(" <span>Brut SS Total : " + al2.get(compteur1));
 										compteur1++;
-										out.println(" € Brut SS Plafonné : " + al2.get(compteur1) + " €");
+										out.println(" € <span>Brut SS Plafonné : " + al2.get(compteur1) + " €");
 										compteur1++;
 										out.println("<br><span> Base vieillesse : " + al2.get(compteur1) + " €");
 										compteur1++;
-										out.println("Cotisation vieillesse : " + al2.get(compteur1) + " €");
+										out.println("<span>Cotisation vieillesse : " + al2.get(compteur1) + " €");
 										compteur1++;
 										out.println("<br><span> Net Payé : " + al2.get(compteur1) + " € <br>");
 										compteur1++;
@@ -80,7 +80,7 @@
 							out.println("</li>");	
 						out.println("</ul>");
 					out.println("</div>");
-				out.println("</nav><br><br><br>");
+				out.println("</nav><br><br>");
 			}
 		%>
 	</body>
