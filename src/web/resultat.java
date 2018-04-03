@@ -78,7 +78,8 @@ public class resultat {
 				al.add(result.getString("prenomtiers"));
 				al.add(result.getInt("numtiers"));
 				al.add(result.getString("nircletiers"));
-				al.add(result.getString("sitetiers"));			
+				al.add(result.getString("sitetiers"));
+				al.add(result.getInt("idtiers"));
 			}
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -87,13 +88,13 @@ public class resultat {
 		return al;
 	}
 	
-	public static ArrayList<Object> yearsum(String num, String site) {
+	public static ArrayList<Object> yearsum(String num, String id) {
 		
 		ArrayList<Object> al = new ArrayList<Object>();
 		Connection conn = web.connexion.MySql();
 		Statement state;
 		
-		String requete = "SELECT anneepaiement,SUM(nbjourpaiement) as nbjour,SUM(INDBRUTPAIEMENT) as indbrut,SUM(BRUTABATTUPAIEMENT) as brutabat,SUM(BRUTSSTOTPAIEMENT) as brutss , SUM(BRUTSSPLAFPAIEMENT) as brutssplaf,SUM(BASEVIEILLPAIEMENT) as basevieill, SUM(COTVIEILLPAIEMENT) as cotvieill, SUM(NETPAYEPAIEMENT)as netpaye FROM PAIEMENTS WHERE numtierspaiements =" + num + " and sitepaiement = " + site + " group by anneepaiement order by anneepaiement desc";
+		String requete = "SELECT anneepaiement,SUM(nbjourpaiement) as nbjour,SUM(INDBRUTPAIEMENT) as indbrut,SUM(BRUTABATTUPAIEMENT) as brutabat,SUM(BRUTSSTOTPAIEMENT) as brutss , SUM(BRUTSSPLAFPAIEMENT) as brutssplaf,SUM(BASEVIEILLPAIEMENT) as basevieill, SUM(COTVIEILLPAIEMENT) as cotvieill, SUM(NETPAYEPAIEMENT)as netpaye FROM PAIEMENTS WHERE numtierspaiements =" + num + " and idtierspaiements = " + id + " group by anneepaiement order by anneepaiement desc";
 		
 		try {
 			state = conn.createStatement();
@@ -116,13 +117,13 @@ public class resultat {
 		return al;
 	}
 	
-	public static ArrayList<Object> yeardetails(String num, String site, Object annee) throws ParseException{
+	public static ArrayList<Object> yeardetails(String num, String id, Object annee) throws ParseException{
 		
 		ArrayList<Object> al = new ArrayList<Object>();
 		Connection conn = web.connexion.MySql();
 		Statement state;
 		
-		String requete = "SELECT datepaiement, nbjourpaiement as nbjour,INDBRUTPAIEMENT as indbrut,BRUTABATTUPAIEMENT as brutabat,BRUTSSTOTPAIEMENT as brutss , BRUTSSPLAFPAIEMENT as brutssplaf, BASEVIEILLPAIEMENT as basevieill, COTVIEILLPAIEMENT as cotvieill, NETPAYEPAIEMENT as netpaye FROM PAIEMENTS WHERE numtierspaiements =" + num + " and sitepaiement = " + site + " and anneepaiement = '" + annee +"' order by datepaiement asc";
+		String requete = "SELECT datepaiement, nbjourpaiement as nbjour,INDBRUTPAIEMENT as indbrut,BRUTABATTUPAIEMENT as brutabat,BRUTSSTOTPAIEMENT as brutss , BRUTSSPLAFPAIEMENT as brutssplaf, BASEVIEILLPAIEMENT as basevieill, COTVIEILLPAIEMENT as cotvieill, NETPAYEPAIEMENT as netpaye FROM PAIEMENTS WHERE numtierspaiements =" + num + " and idtierspaiements = " + id + " and anneepaiement = '" + annee +"' order by datepaiement asc";
 		
 		try {
 			state = conn.createStatement();

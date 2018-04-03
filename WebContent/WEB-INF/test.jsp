@@ -17,13 +17,14 @@
 			String num = (String) request.getAttribute("num");
 			String nir = (String) request.getAttribute("nir");
 			String site = (String) request.getAttribute("site");
+			String id = (String) request.getAttribute("id");
 			
 			out.println("<header>");
 				out.println("Nom : " + nom + " Prénom : " + prenom + "<br>Numéro de tiers : " + num + "<br>N.I.R. : " + nir);
 			out.println("</header>");
 			
 			ArrayList<Object> al = new ArrayList<Object>();
-			al = web.resultat.yearsum(num, site);
+			al = web.resultat.yearsum(num, id);
 			int compteur = 0;
 			
 			
@@ -54,7 +55,7 @@
 						out.println("<ul>");
 							out.println("<li>");	
 								ArrayList<Object> al2 = new ArrayList<Object>();
-								al2 = web.resultat.yeardetails(num, site, annee);
+								al2 = web.resultat.yeardetails(num, id, annee);
 								int compteur1 = 0;
 								while(compteur1 < al2.size()){
 																

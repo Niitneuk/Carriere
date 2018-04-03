@@ -21,7 +21,7 @@
 		al = web.resultat.find(nom, prenom, nir, num, typereq);
 		
 	
-		for (int j = 0; j < (al.size() / 5 ); j++)
+		for (int j = 0; j < (al.size() / 6 ); j++)
 		{
 			out.println("<form method='post' action='research'>");
 				out.println("<fieldset>");
@@ -49,6 +49,8 @@
 						out.println("Site : ");
 						out.println("</label>");
 						out.println("<input type='text' name='sitetiers' value='" + al.get(compteur) + "' readonly />");
+						compteur++;
+						out.println("<input type='hidden' name='idtiers' value='" + al.get(compteur) + "'/>");
 						compteur++;
 						out.println("<input type='submit' value='>' name='submit' class='submit'/>");
 				out.println("</fieldset>");

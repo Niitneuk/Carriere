@@ -28,12 +28,15 @@ public class research extends HttpServlet {
 		String recupnum = request.getParameter("numtiers");
 		String recupnir = request.getParameter("nirtiers");
 		String recupsite = request.getParameter("sitetiers");
+		String recupid = request.getParameter("idtiers");
 		
 		request.setAttribute("nom", recupnom);
 		request.setAttribute("prenom", recupprenom);
 		request.setAttribute("num", recupnum);
 		request.setAttribute("nir", recupnir);
 		request.setAttribute("site", recupsite);
+		request.setAttribute("id", recupid);
+		
 		/*test
 		
 		/* Transmission de la paire d'objets request/response à notre JSP */
