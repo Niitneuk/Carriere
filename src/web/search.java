@@ -44,7 +44,7 @@ public void doPost( HttpServletRequest request, HttpServletResponse response) th
 		request.setAttribute("nir", recupnir);
 		request.setAttribute("num", recupnum);
 		request.setAttribute("typereq", recupreq);
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/research.jsp" ).forward( request, response );
+ 
 		redirect = true;
 	}
 	

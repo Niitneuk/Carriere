@@ -7,7 +7,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="Styles/style.css" />
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<title>Insert title here</title>
+		<title>Récapitulatif des paiements</title>
 	</head>
 	<body>
 		<%
