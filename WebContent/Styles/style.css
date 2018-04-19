@@ -5,6 +5,12 @@ header{
 	text-align:center;
 }
 
+img{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 body{
   	font-family: 'Comic sans MS', cursive;
 	margin:0;
@@ -15,14 +21,15 @@ body{
 	-moz-osx-font-smoothing: grayscale;
 }
 nav{
-	width:100%; 
+	width:99%; 
 	background:#ffffff; 
 	height:110px; 
 	line-height:59px;
 	border:1px solid blue;
 	border-radius: 10px;
-	marging-right: 5em;
+	margin-right: 1.5em;
 	padding-bottom:13em;
+	margin-left: 1em;
 }
 .hamburger{
   background:none;
@@ -76,4 +83,40 @@ nav{
 span{
 	padding:20px;
 }
+
+.pdf{
+	padding:6px 0 6px 0;
+	font:Bold 13px Arial;
+	background:#d34836;
+	color:#fff;
+	width:90px;
+	border-radius:10px;
+	border:none;
+	cursor: pointer;
+}
+
+.xls{
+	padding:6px 0 6px 0;
+	font:Bold 13px Arial;
+	background:green;
+	color:#fff;
+	width:90px;
+	border-radius:10px;
+	border:none;
+	cursor: pointer;
+}
 	
+.mail{
+	padding:6px 0 6px 0;
+	font:Bold 13px Arial;
+	background:blue;
+	color:#fff;
+	width:90px;
+	border-radius:10px;
+	border:none;
+	cursor: pointer;
+}
+
+button:hover:not(.hamburger):not(.cross){
+	background: black;
+}

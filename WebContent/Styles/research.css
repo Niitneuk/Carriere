@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+img{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 label, input{
 	display: block;
 	width:150px;

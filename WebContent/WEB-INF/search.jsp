@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Reconstitution de carrière</title>
 <link rel="stylesheet" href="Styles/search.css" />
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
+<img src="Styles/LOGORAA.jpg">
 <body>
 	<form method="post" action='search'>
 		<fieldset>

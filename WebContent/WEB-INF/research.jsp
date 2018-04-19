@@ -8,6 +8,7 @@
 <title>Résultats</title>
 <link rel="stylesheet" href="Styles/research.css" />
 </head>
+<img src="Styles/LOGORAA.jpg">
 <body>
 	<%
 		String nom = (String) request.getAttribute("nom");
@@ -55,6 +56,7 @@
 						out.println("<input type='submit' value='>' name='submit' class='submit'/>");
 				out.println("</fieldset>");
 			out.println("</form>");	
+
 		};
 		
 		if(compteur == 0){

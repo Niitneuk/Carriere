@@ -26,7 +26,8 @@ public void doGet( HttpServletRequest request, HttpServletResponse response) thr
 @Override
 public void doPost( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
-	
+
+		
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/test.jsp" ).forward( request, response );
 	}
 }
