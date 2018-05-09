@@ -6,7 +6,7 @@ header{
 }
 
 img{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
 }
@@ -34,7 +34,6 @@ nav{
 .hamburger{
   background:none;
   position:absolute;
-  /*top:0;*/
   right:0;
   line-height:45px;
   padding:5px 15px 0px 15px;
@@ -49,7 +48,6 @@ nav{
 .cross{
   background:none;
   position:absolute;
-  /*top:0px;*/
   right:0;
   padding:7px 15px 0px 15px;
   color:#999;
@@ -61,7 +59,7 @@ nav{
   outline:none;
   z-index:10000000000000;
 }
-.menu{z-index:1000000; font-weight:bold;  width:100%; background:#f1f1f1;  position: relative; font-size:12px;}
+.menu{z-index:1000000; font-weight:bold;  width:100%; background:#f1f1f1;  position:relative; font-size:12px;}
 .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
 .menu li {display: block;   padding:15px 0 15px 0; border:blue 1px solid; border-radius: 10px;}
 .menu ul li  { text-decoration:none;  margin: 0px; color:#666; background-color: none;}
@@ -99,17 +97,6 @@ span{
 	padding:6px 0 6px 0;
 	font:Bold 13px Arial;
 	background:green;
-	color:#fff;
-	width:90px;
-	border-radius:10px;
-	border:none;
-	cursor: pointer;
-}
-	
-.mail{
-	padding:6px 0 6px 0;
-	font:Bold 13px Arial;
-	background:blue;
 	color:#fff;
 	width:90px;
 	border-radius:10px;

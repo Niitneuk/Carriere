@@ -12,6 +12,8 @@ public class search extends HttpServlet {
 
 @Override
 public void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	
+	HttpSession session = request.getSession();
 		
 	
 
@@ -37,7 +39,7 @@ public void doPost( HttpServletRequest request, HttpServletResponse response) th
 	}else if (recupreq == null){
 		request.setAttribute("noradio", "oui");  
 	}
-	else
+	else;
 	{
 		request.setAttribute("nom", recupnom);  
 		request.setAttribute("prenom", recupprenom);

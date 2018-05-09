@@ -26,35 +26,49 @@
 		String id = (String) request.getAttribute("id");
 
 		out.println("<header>");
-		out.println(
-				"Nom : " + nom + " Prénom : " + prenom + "<br>Numéro de tiers : " + num + "<br>N.I.R. : " + nir);
+		out.println("Nom : " + nom + " Prénom : " + prenom + "<br>Numéro de tiers : " + num + "<br>N.I.R. : " + nir);
 		out.println("</header>");
 
 		ArrayList<Object> al = new ArrayList<Object>();
 		al = web.resultat.yearsum(num, id);
 		int compteur = 0;
+		
+		String pdf = "";
 
 		for (int i = 0; i < al.size() / 9; i++) {
 			out.println("<nav>");
 			out.println("<span> Année : " + al.get(compteur));
 			Object annee = al.get(compteur);
+			//pdf += al.get(compteur);
 			compteur++;
 			out.println("<br><span> Nombre de jours payés : " + al.get(compteur));
+			//pdf += al.get(compteur);
 			compteur++;
 			out.println("<br><span> Indemnités bruts : " + al.get(compteur));
+			pdf += al.get(compteur);
 			compteur++;
 			out.println(" € <span>Brut Abattu : " + al.get(compteur) + " €");
+			//pdf += al.get(compteur);
 			compteur++;
 			out.println(" <span>Brut SS Total : " + al.get(compteur));
+			//pdf += al.get(compteur);
 			compteur++;
 			out.println(" € <span>Brut SS Plafonné : " + al.get(compteur) + " €");
+			//pdf += al.get(compteur);
 			compteur++;
 			out.println("<br><span>Base vieillesse : " + al.get(compteur) + " €");
+			//pdf += al.get(compteur);
 			compteur++;
 			out.println(" <span>Cotisation vieillesse : " + al.get(compteur) + " €");
+			//pdf += al.get(compteur);
 			compteur++;
 			out.println("<br><span>Net Payé : " + al.get(compteur) + " €");
+			//pdf += al.get(compteur);
 			compteur++;
+			//pdf = pdf.replace("." , ",");
+			//out.println("<p>"+pdf+"</p>");
+			out.println("<span><button type='button' class='pdf' onclick='pdftest(" + pdf + ");'>PDF</button>");
+			pdf = "";
 			out.println("<button class='hamburger'>&#9776;</button>");
 			out.println("<button class='cross'>&#735;</button>");
 			out.println("<div class='menu'>");
@@ -65,7 +79,7 @@
 			int compteur1 = 0;
 			while (compteur1 < al2.size()) {
 
-				out.println("<span>" + al2.get(compteur1));
+				out.println("<span>Date du paiement : " + al2.get(compteur1));
 				compteur1++;
 				out.println("<br><span> Nombre de jours payés : " + al2.get(compteur1));
 				compteur1++;
@@ -84,9 +98,6 @@
 				out.println("<br><span> Net Payé : " + al2.get(compteur1) + " € <br>");
 				Object test = al2.get(compteur1);
 				compteur1++;				
-				out.println("<span><button type='button' class='pdf' onclick='conversion("+ test +");'>PDF</button>");
-				out.println("<span><button type='button' class='xls' onclick='go();'>XML</button>");
-				out.println("<span><a href='mailto: qpp'><button type='button' class='mail'>MAIL</button></a><br>");
 			}
 			out.println("</li>");
 			out.println("</ul>");
@@ -117,7 +128,8 @@
 		});
 	});
 	
-	function conversion(test)
+	
+	function pdftest(test)
 	{
 
 		var docDefinition = {
@@ -138,12 +150,12 @@
 		pdfMake.createPdf(docDefinition).download('optional.pdf');
 	}
 	
-			function randomDate(start, end) {
+		function randomDate(start, end) {
 			var d= new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 			return d;
 		}
 		
-		function go(){
+		function xls(){
 
 		    var excel = $JExcel.new("Calibri light 10 #333333");			// Default font
 			
